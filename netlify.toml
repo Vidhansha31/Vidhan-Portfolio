@@ -3,15 +3,14 @@
   publish = "out"
 
 [build.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
   NODE_VERSION = "18"
 
 [[redirects]]
   from = "/posts/:slug"
-  to = "/projects/:slug"
+  to = "/projects/:slug/"
   status = 301
 
 [[redirects]]
-  from = "/*"
-  to = "/404/index.html"
-  status = 404
+  from = "/posts/:slug/"
+  to = "/projects/:slug/"
+  status = 301

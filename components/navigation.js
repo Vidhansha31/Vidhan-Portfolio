@@ -14,16 +14,6 @@ export default function Navigation() {
             </Link>
           </li>
           <li>
-            <a
-              href="https://medium.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-success duration-200 transition-colors p-4 block font-medium"
-            >
-              Blog
-            </a>
-          </li>
-          <li>
             <Link href="/about">
               <a className="hover:text-success duration-200 transition-colors p-4 block font-medium">
                 About

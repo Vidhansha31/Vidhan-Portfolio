@@ -20,7 +20,7 @@ export default function Projects({ allPosts }) {
         <Header />
         <MoreStories
           posts={allPosts}
-          title="More Projects"
+          title="Projects"
           intro="These projects highlight selected product work across enterprise commerce and distribution operations. Some enterprise details are summarized to respect client confidentiality."
         />
       </Container>
