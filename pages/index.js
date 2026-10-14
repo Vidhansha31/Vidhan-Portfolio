@@ -41,13 +41,8 @@ export default function Index({ allPosts }) {
           {morePosts.length > 0 && (
             <MoreStories
               posts={morePosts}
-<<<<<<< HEAD
-              title="Professional Experience"
-              intro="Product Associate at HotWax Commerce, working on enterprise Order Management Systems, omnichannel commerce, inventory, fulfillment, client requirements, integrations, and production releases."
-=======
-             title="Selected Projects"
-	intro="Selected product work across enterprise Order Management Systems and distribution management."
->>>>>>> ac462f8 (Update portfolio content, assets, and project cards)
+              title="Selected Projects"
+              intro="Selected product work across enterprise Order Management Systems and distribution management."
             />
           )}
         </div>
