@@ -13,6 +13,22 @@ export default function PostPreview({
     <div className="border-b border-slate-200 last:border-0 pb-8 mb-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
         <div>
+          {slug === 'enterprise-order-management-workflows' && (
+            <img
+              src="/assets/posts/oms-workflows/hotwax-logo.png"
+              alt="HotWax Commerce logo"
+              className="w-auto h-12 object-contain mb-4"
+            />
+          )}
+
+          {slug === 'vitaran-distribution-management-system' && (
+            <img
+              src="/assets/posts/vitaran/logo-vitran.png"
+              alt="Vitaran logo"
+              className="w-auto h-12 object-contain mb-4"
+            />
+          )}
+
           <CoverImage
             slug={slug}
             title={title}
@@ -21,6 +37,7 @@ export default function PostPreview({
             width={278}
           />
         </div>
+
         <div className="md:col-span-2">
           <h3 className="text-2xl mb-3 leading-snug font-bold">
             <Link href={`/projects/${slug}`}>
@@ -29,9 +46,11 @@ export default function PostPreview({
               </a>
             </Link>
           </h3>
+
           <div className="text-sm mb-3 text-slate-400">
             <DateFormatter dateString={date} />
           </div>
+
           <p className="text-base md:text-lg leading-relaxed text-slate-600">
             {excerpt}
           </p>

@@ -5,9 +5,8 @@ export default function Intro() {
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
       <div className="md:pr-8 md:max-w-2xl">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4 text-text-color">
-          Hi, I&apos;m Vidhan Sharma,<br />
-          Associate Product Manager
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-4 text-text-color">
+          Hi, I&apos;m Vidhan Sharma,<br />Product Associate
         </h1>
 
         <p className="text-lg text-slate-600 leading-relaxed">
@@ -32,7 +31,7 @@ export default function Intro() {
         <Image
           title="Vidhan Sharma"
           alt="Vidhan Sharma avatar"
-          src="/assets/about/Vidhan-Avatar.png"
+          src="/assets/about/vidhan.svg"
           height={295}
           width={293}
           priority
