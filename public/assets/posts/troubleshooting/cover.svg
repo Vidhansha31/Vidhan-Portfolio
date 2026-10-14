@@ -1,0 +1,102 @@
+<svg viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="450" rx="16" fill="#F8FAFC"/>
+  <rect x="2" y="2" width="596" height="446" rx="14" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- Subtle Grid Accent -->
+  <g opacity="0.06" stroke="#1E293B" stroke-width="1">
+    <line x1="0" y1="90" x2="600" y2="90"/>
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <line x1="0" y1="270" x2="600" y2="270"/>
+    <line x1="0" y1="360" x2="600" y2="360"/>
+    <line x1="120" y1="0" x2="120" y2="450"/>
+    <line x1="240" y1="0" x2="240" y2="450"/>
+    <line x1="360" y1="0" x2="360" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+  </g>
+
+  <!-- Main Card Graphic Window -->
+  <g id="troubleshooting-interface">
+    <rect x="40" y="40" width="520" height="370" rx="12" fill="#0F172A" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.1))"/>
+    
+    <!-- Top terminal bar -->
+    <rect x="40" y="40" width="520" height="42" rx="12" fill="#1E293B"/>
+    <rect x="40" y="70" width="520" height="12" fill="#1E293B"/>
+    <circle cx="65" cy="61" r="5" fill="#EF4444"/>
+    <circle cx="82" cy="61" r="5" fill="#F59E0B"/>
+    <circle cx="99" cy="61" r="5" fill="#10B981"/>
+    
+    <text x="120" y="66" font-family="'Courier New', Courier, monospace" font-size="12" font-weight="600" fill="#94A3B8">
+      PRODUCTION ROOT CAUSE ANALYSIS • SQL / LOGS / API TRACE
+    </text>
+
+    <!-- Left Box: SQL / Transactional Query Trace -->
+    <g transform="translate(60, 95)">
+      <rect x="0" y="0" width="235" height="185" rx="8" fill="#1E293B" stroke="#334155"/>
+      <text x="14" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">SQL / TRANSACTION AUDIT</text>
+      
+      <!-- Code lines -->
+      <g font-family="'Courier New', Courier, monospace" font-size="9" fill="#E2E8F0">
+        <text x="14" y="48"><tspan fill="#F472B6">SELECT</tspan> order_id, status, atp</text>
+        <text x="14" y="64"><tspan fill="#F472B6">FROM</tspan> order_fulfillment_txn</text>
+        <text x="14" y="80"><tspan fill="#F472B6">WHERE</tspan> sync_state = <tspan fill="#FBBF24">'PENDING'</tspan></text>
+        <text x="14" y="96"><tspan fill="#F472B6">AND</tspan> integration = <tspan fill="#FBBF24">'NETSUITE'</tspan>;</text>
+      </g>
+      
+      <!-- Results table mockup -->
+      <rect x="14" y="112" width="207" height="60" rx="4" fill="#0F172A" stroke="#334155"/>
+      <text x="22" y="128" font-family="'Courier New', Courier, monospace" font-size="9" fill="#94A3B8">ROW | ORDER_ID | ATTR | STATUS</text>
+      <text x="22" y="145" font-family="'Courier New', Courier, monospace" font-size="9" fill="#10B981">01  | ORD-8924 | ATP  | RESOLVED</text>
+      <text x="22" y="160" font-family="'Courier New', Courier, monospace" font-size="9" fill="#38BDF8">02  | ORD-8925 | QOH  | VERIFIED</text>
+    </g>
+
+    <!-- Right Box: API Response & JSON Payload -->
+    <g transform="translate(305, 95)">
+      <rect x="0" y="0" width="235" height="185" rx="8" fill="#1E293B" stroke="#334155"/>
+      <text x="14" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34D399">API PAYLOAD INSPECTION</text>
+      
+      <g font-family="'Courier New', Courier, monospace" font-size="9" fill="#E2E8F0">
+        <text x="14" y="48"><tspan fill="#94A3B8">{</tspan></text>
+        <text x="24" y="64"><tspan fill="#FBBF24">"status"</tspan>: <tspan fill="#38BDF8">200</tspan>,</text>
+        <text x="24" y="80"><tspan fill="#FBBF24">"webhook"</tspan>: <tspan fill="#FBBF24">"orders/fulfill"</tspan>,</text>
+        <text x="24" y="96"><tspan fill="#FBBF24">"payload_verified"</tspan>: <tspan fill="#F472B6">true</tspan>,</text>
+        <text x="24" y="112"><tspan fill="#FBBF24">"discrepancy_resolved"</tspan>: <tspan fill="#F472B6">true</tspan>,</text>
+        <text x="24" y="128"><tspan fill="#FBBF24">"target"</tspan>: <tspan fill="#FBBF24">"HotWax &lt;-&gt; Shopify"</tspan></text>
+        <text x="14" y="144"><tspan fill="#94A3B8">}</tspan></text>
+      </g>
+      
+      <rect x="14" y="152" width="207" height="20" rx="4" fill="#065F46"/>
+      <text x="24" y="166" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#A7F3D0">✓ ROOT CAUSE CONFIRMED</text>
+    </g>
+
+    <!-- Bottom System Architecture Nodes -->
+    <g transform="translate(60, 292)">
+      <rect x="0" y="0" width="480" height="98" rx="8" fill="#1E293B" stroke="#334155"/>
+      <text x="18" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#E2E8F0">
+        CONNECTED ENTERPRISE SYSTEMS VALIDATED
+      </text>
+
+      <!-- System Chips -->
+      <g transform="translate(18, 38)">
+        <!-- Shopify -->
+        <rect x="0" y="0" width="95" height="46" rx="6" fill="#0F172A" stroke="#38BDF8"/>
+        <text x="12" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">Shopify</text>
+        <text x="12" y="37" font-family="system-ui, sans-serif" font-size="8" fill="#94A3B8">Webhooks / APIs</text>
+
+        <!-- HotWax OMS -->
+        <rect x="110" y="0" width="105" height="46" rx="6" fill="#0F172A" stroke="#34D399"/>
+        <text x="120" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#34D399">HotWax OMS</text>
+        <text x="120" y="37" font-family="system-ui, sans-serif" font-size="8" fill="#94A3B8">Core Orchestration</text>
+
+        <!-- NetSuite -->
+        <rect x="230" y="0" width="100" height="46" rx="6" fill="#0F172A" stroke="#FBBF24"/>
+        <text x="240" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FBBF24">NetSuite</text>
+        <text x="240" y="37" font-family="system-ui, sans-serif" font-size="8" fill="#94A3B8">ERP / General Ledger</text>
+
+        <!-- SAP / POS -->
+        <rect x="345" y="0" width="95" height="46" rx="6" fill="#0F172A" stroke="#F472B6"/>
+        <text x="355" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#F472B6">SAP &amp; POS</text>
+        <text x="355" y="37" font-family="system-ui, sans-serif" font-size="8" fill="#94A3B8">Store Integrations</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,88 @@
+<svg viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="450" rx="16" fill="#F8FAFC"/>
+  <rect x="2" y="2" width="596" height="446" rx="14" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- Subtle Grid Accent -->
+  <g opacity="0.06" stroke="#1E293B" stroke-width="1">
+    <line x1="0" y1="90" x2="600" y2="90"/>
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <line x1="0" y1="270" x2="600" y2="270"/>
+    <line x1="0" y1="360" x2="600" y2="360"/>
+    <line x1="120" y1="0" x2="120" y2="450"/>
+    <line x1="240" y1="0" x2="240" y2="450"/>
+    <line x1="360" y1="0" x2="360" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+  </g>
+
+  <!-- Main Card Graphic Window -->
+  <g id="vitaran-interface">
+    <rect x="40" y="40" width="520" height="370" rx="12" fill="#FFFFFF" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.05))"/>
+    <rect x="40" y="40" width="520" height="50" rx="12" fill="#142850"/>
+    <rect x="40" y="78" width="520" height="12" fill="#142850"/>
+    
+    <!-- Window controls -->
+    <circle cx="65" cy="65" r="5" fill="#FF6464"/>
+    <circle cx="82" cy="65" r="5" fill="#FFB201"/>
+    <circle cx="99" cy="65" r="5" fill="#0070F3"/>
+    
+    <text x="120" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">
+      VITARAN DMS • DISTRIBUTION &amp; DISPATCH WORKFLOWS
+    </text>
+
+    <!-- Side Menu Mockup -->
+    <rect x="60" y="110" width="120" height="28" rx="6" fill="#EDF7FA"/>
+    <rect x="75" y="121" width="60" height="7" rx="3" fill="#0070F3"/>
+    <rect x="60" y="148" width="120" height="24" rx="6" fill="#F1F5F9"/>
+    <rect x="75" y="157" width="70" height="6" rx="3" fill="#94A3B8"/>
+    <rect x="60" y="180" width="120" height="24" rx="6" fill="#F1F5F9"/>
+    <rect x="75" y="189" width="50" height="6" rx="3" fill="#94A3B8"/>
+    <rect x="60" y="212" width="120" height="24" rx="6" fill="#F1F5F9"/>
+    <rect x="75" y="221" width="80" height="6" rx="3" fill="#94A3B8"/>
+
+    <!-- Dynamic Pricing Card -->
+    <rect x="200" y="110" width="165" height="120" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <circle cx="225" cy="130" r="12" fill="#FF6464" opacity="0.15"/>
+    <path d="M222 126 L228 126 M225 123 L225 137 M222 134 L228 134" stroke="#FF6464" stroke-width="2" stroke-linecap="round"/>
+    <text x="245" y="134" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#1E293B">Pricing Tiers</text>
+    <rect x="215" y="152" width="135" height="18" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="225" y="158" width="60" height="6" rx="3" fill="#64748B"/>
+    <rect x="310" y="158" width="30" height="6" rx="3" fill="#0070F3"/>
+    <rect x="215" y="176" width="135" height="18" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="225" y="182" width="50" height="6" rx="3" fill="#64748B"/>
+    <rect x="310" y="182" width="30" height="6" rx="3" fill="#0070F3"/>
+    <rect x="215" y="200" width="135" height="18" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="225" y="206" width="70" height="6" rx="3" fill="#64748B"/>
+    <rect x="310" y="206" width="30" height="6" rx="3" fill="#0070F3"/>
+
+    <!-- Daily Deliveries & Routes Card -->
+    <rect x="380" y="110" width="165" height="120" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <circle cx="405" cy="130" r="12" fill="#0070F3" opacity="0.15"/>
+    <path d="M400 134 L404 126 L410 130 L414 123" stroke="#0070F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="425" y="134" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#1E293B">Route Dispatch</text>
+    <path d="M395 160 C420 150, 430 190, 460 170 C480 155, 500 185, 525 165" stroke="#0070F3" stroke-width="2.5" stroke-dasharray="4 4" fill="none"/>
+    <circle cx="395" cy="160" r="4" fill="#0070F3"/>
+    <circle cx="460" cy="170" r="4" fill="#FFB201"/>
+    <circle cx="525" cy="165" r="4" fill="#FF6464"/>
+    <rect x="395" y="195" width="135" height="22" rx="4" fill="#EDF7FA"/>
+    <text x="408" y="210" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#0070F3">✓ 142 Deliveries Active</text>
+
+    <!-- Bottom Workflow Summary Bar -->
+    <rect x="60" y="248" width="485" height="142" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="80" y="274" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#142850">
+      WORKFLOW SEPARATION
+    </text>
+    
+    <!-- Admin vs Delivery Worker cards -->
+    <rect x="80" y="286" width="215" height="85" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="96" y="306" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0070F3">Administrator Portal</text>
+    <text x="96" y="324" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">• Customer Pricing &amp; Exception Overrides</text>
+    <text x="96" y="340" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">• Daily Inventory &amp; Expense Tracking</text>
+    <text x="96" y="356" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">• WhatsApp Invoice Communication</text>
+
+    <rect x="310" y="286" width="220" height="85" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="326" y="306" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FF6464">Mobile Delivery Worker</text>
+    <text x="326" y="324" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">• Streamlined Delivery Run List</text>
+    <text x="326" y="340" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">• Live Drop-off Confirmation</text>
+    <text x="326" y="356" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">• Offline-resilient Mobile UI</text>
+  </g>
+</svg>

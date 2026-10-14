@@ -1,0 +1,44 @@
+.markdown {
+  @apply text-lg leading-relaxed text-slate-700;
+}
+
+.markdown p,
+.markdown blockquote {
+  @apply my-6 text-slate-600 leading-relaxed;
+}
+
+.markdown ul {
+  @apply list-disc pl-6 my-6 text-slate-600 space-y-2;
+}
+
+.markdown ol {
+  @apply list-decimal pl-6 my-6 text-slate-600 space-y-2;
+}
+
+.markdown li {
+  @apply leading-relaxed;
+}
+
+.markdown img {
+  @apply mx-auto max-w-2xl w-full rounded-md shadow-sm my-8;
+}
+
+.markdown h2 {
+  @apply text-2xl md:text-3xl font-bold mt-12 mb-4 leading-snug text-text-color;
+}
+
+.markdown h3 {
+  @apply text-xl md:text-2xl font-bold mt-8 mb-4 leading-snug text-text-color;
+}
+
+.markdown hr {
+  @apply my-10 border-t border-slate-200;
+}
+
+.markdown strong {
+  @apply font-semibold text-slate-900;
+}
+
+.markdown a {
+  @apply underline text-success hover:opacity-80 transition-opacity;
+}

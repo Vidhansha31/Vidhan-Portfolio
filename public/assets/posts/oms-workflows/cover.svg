@@ -1,0 +1,112 @@
+<svg viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="450" rx="16" fill="#F8FAFC"/>
+  <rect x="2" y="2" width="596" height="446" rx="14" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- Subtle Grid Accent -->
+  <g opacity="0.06" stroke="#1E293B" stroke-width="1">
+    <line x1="0" y1="90" x2="600" y2="90"/>
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <line x1="0" y1="270" x2="600" y2="270"/>
+    <line x1="0" y1="360" x2="600" y2="360"/>
+    <line x1="120" y1="0" x2="120" y2="450"/>
+    <line x1="240" y1="0" x2="240" y2="450"/>
+    <line x1="360" y1="0" x2="360" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+  </g>
+
+  <!-- Main Card Graphic Window -->
+  <g id="oms-interface">
+    <rect x="40" y="40" width="520" height="370" rx="12" fill="#FFFFFF" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.05))"/>
+    <rect x="40" y="40" width="520" height="50" rx="12" fill="#142850"/>
+    <rect x="40" y="78" width="520" height="12" fill="#142850"/>
+    
+    <!-- Window controls -->
+    <circle cx="65" cy="65" r="5" fill="#FF6464"/>
+    <circle cx="82" cy="65" r="5" fill="#FFB201"/>
+    <circle cx="99" cy="65" r="5" fill="#0070F3"/>
+    
+    <text x="120" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">
+      ENTERPRISE OMS • INVENTORY &amp; ORDER ROUTING
+    </text>
+
+    <!-- Top Key Metrics Cards (ATP, QOH, Safety Stock) -->
+    <g transform="translate(60, 105)">
+      <!-- Card 1: ATP -->
+      <rect x="0" y="0" width="150" height="70" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="16" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748B">AVAILABLE TO PROMISE (ATP)</text>
+      <text x="16" y="52" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#0070F3">48,250</text>
+      <circle cx="128" cy="40" r="10" fill="#EDF7FA"/>
+      <path d="M124 40 L127 43 L133 37" stroke="#0070F3" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Card 2: QOH -->
+      <rect x="165" y="0" width="150" height="70" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="181" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748B">QUANTITY ON HAND (QOH)</text>
+      <text x="181" y="52" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#142850">54,100</text>
+      <circle cx="293" cy="40" r="10" fill="#F1F5F9"/>
+      <path d="M288 40 L298 40" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Card 3: Safety Stock -->
+      <rect x="330" y="0" width="150" height="70" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="346" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748B">SAFETY STOCK BUFFER</text>
+      <text x="346" y="52" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#FF6464">5,850</text>
+      <circle cx="458" cy="40" r="10" fill="#FFF1F2"/>
+      <path d="M458 35 L458 41 M458 45 L458 45" stroke="#FF6464" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Fulfillment Pipeline Diagram -->
+    <g transform="translate(60, 195)">
+      <rect x="0" y="0" width="480" height="195" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="20" y="28" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#142850">
+        ORDER FULFILLMENT &amp; ROUTING PIPELINE
+      </text>
+
+      <!-- Step 1: Shopify / Channel Ingestion -->
+      <rect x="20" y="45" width="95" height="130" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <rect x="32" y="58" width="70" height="16" rx="4" fill="#EDF7FA"/>
+      <text x="38" y="70" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#0070F3">Shopify Ingest</text>
+      <text x="30" y="100" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">Web Orders</text>
+      <text x="30" y="118" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">Omnichannel</text>
+      <text x="30" y="136" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">POS Stores</text>
+      <rect x="30" y="152" width="75" height="12" rx="3" fill="#E2E8F0"/>
+
+      <!-- Arrow 1 -->
+      <path d="M118 110 L132 110" stroke="#0070F3" stroke-width="2" marker-end="url(#arrow)"/>
+      <circle cx="125" cy="110" r="3" fill="#0070F3"/>
+
+      <!-- Step 2: Allocation & Routing Rules -->
+      <rect x="135" y="45" width="105" height="130" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <rect x="145" y="58" width="85" height="16" rx="4" fill="#EDF7FA"/>
+      <text x="150" y="70" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#0070F3">OMS Routing Hub</text>
+      <text x="145" y="98" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">• Proximity Logic</text>
+      <text x="145" y="116" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">• Split Shipments</text>
+      <text x="145" y="134" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">• Backorder Rule</text>
+      <rect x="145" y="152" width="85" height="12" rx="3" fill="#E2E8F0"/>
+
+      <!-- Arrow 2 -->
+      <path d="M243 110 L257 110" stroke="#0070F3" stroke-width="2"/>
+      <circle cx="250" cy="110" r="3" fill="#0070F3"/>
+
+      <!-- Step 3: Fulfillment Nodes -->
+      <rect x="260" y="45" width="100" height="130" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <rect x="270" y="58" width="80" height="16" rx="4" fill="#FFF1F2"/>
+      <text x="276" y="70" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#FF6464">DC &amp; Ship-from</text>
+      <text x="270" y="98" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">• Main Warehouse</text>
+      <text x="270" y="116" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">• Store Pickup</text>
+      <text x="270" y="134" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">• Regional Hubs</text>
+      <rect x="270" y="152" width="80" height="12" rx="3" fill="#E2E8F0"/>
+
+      <!-- Arrow 3 -->
+      <path d="M363 110 L377 110" stroke="#0070F3" stroke-width="2"/>
+      <circle cx="370" cy="110" r="3" fill="#0070F3"/>
+
+      <!-- Step 4: Enterprise Integrations -->
+      <rect x="380" y="45" width="85" height="130" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <rect x="388" y="58" width="70" height="16" rx="4" fill="#EDF7FA"/>
+      <text x="393" y="70" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#0070F3">ERP Sync</text>
+      <text x="388" y="98" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">• NetSuite</text>
+      <text x="388" y="116" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">• SAP Financials</text>
+      <text x="388" y="134" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">• Carrier APIs</text>
+      <rect x="388" y="152" width="70" height="12" rx="3" fill="#E2E8F0"/>
+    </g>
+  </g>
+</svg>

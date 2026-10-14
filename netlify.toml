@@ -1,0 +1,13 @@
+[build]
+  command = "npm run export"
+  publish = "out"
+
+[[redirects]]
+  from = "/posts/:slug"
+  to = "/projects/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/404/index.html"
+  status = 404
