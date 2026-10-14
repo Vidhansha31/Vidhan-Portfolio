@@ -7,7 +7,7 @@ export default function Intro() {
       <div className="md:pr-8 md:max-w-2xl">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4 text-text-color">
           Hi, I&apos;m Vidhan Sharma,<br />
-          Associate Product Management
+          Associate Product Manager
         </h1>
 
         <p className="text-lg text-slate-600 leading-relaxed">
