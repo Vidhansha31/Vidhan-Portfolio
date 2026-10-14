@@ -25,7 +25,7 @@ export default function About() {
               <Image
                 title="Vidhan Sharma"
                 alt="Vidhan Sharma avatar"
-                src="/assets/about/vidhan.svg"
+                src="/assets/about/Vidhan-Avatar.png"
                 height={295}
                 width={293}
                 priority
