@@ -379,7 +379,7 @@ function fmt(s){
   if(s==null||s==='') return '';
   return esc(s)
     /* [[fill-in]] first, so it can't be mistaken for a link */
-    .replace(/\[\[(.+?)\]\]/g,'<span class="fill">$1</span>')
+    .replace(/\[\[(.+?)\]\]/g, showFills() ? '<span class="fill">$1</span>' : '')
     /* [text](url) */
     .replace(/\[([^\[\]]+)\]\(([^)\s]+)\)/g, function(_,t,u){
       return '<a href="'+esc(safeHref(u))+'" target="_blank" rel="noopener">'+t+'</a>';
@@ -387,7 +387,15 @@ function fmt(s){
     .replace(/\*([^*]+)\*/g,'<em>$1</em>');
 }
 function isTodo(s){ return typeof s==='string' && s.indexOf('[[')!==-1; }
-function has(s){ return typeof s==='string' && s.trim()!==''; }
+/* When showFillIns is off, a [[note]] renders as nothing. A value that was
+   ONLY a note then has nothing left to show, so its row/tile/line is skipped. */
+function showFills(){ return !(window.SITE && window.SITE.showFillIns===false); }
+function isEmptyAfterFills(s){
+  if(typeof s!=='string') return true;
+  if(showFills()) return s.trim()==='';
+  return s.replace(/\[\[.*?\]\]/g,'').trim()==='';
+}
+function has(s){ return typeof s==='string' && s.trim()!=='' && !isEmptyAfterFills(s); }
 function el(html){ var d=document.createElement('div'); d.innerHTML=html.trim(); return d.firstElementChild; }
 
 /* ---------- figures ---------- */
@@ -497,7 +505,7 @@ function hero(S){
     return '<a class="'+cls+'" href="'+esc(a.href)+'"'+(a.external?' target="_blank" rel="noopener"':'')+'>'+esc(a.label)+tail+'</a>';
   }).join('');
 
-  var stats=(h.stats||[]).map(function(s){
+  var stats=(h.stats||[]).filter(function(s){ return !isEmptyAfterFills(String(s.value==null?'':s.value)); }).map(function(s){
     var v=String(s.value==null?'':s.value), m=/^(\d+)(.*)$/.exec(v), attr='';
     if(m) attr=' data-count="'+m[1]+'" data-suffix="'+esc(m[2])+'"';
     return '<div class="stat"><div class="n '+esc(s.tone||'')+'"'+attr+'>'+fmt(s.value)+'</div>'+
@@ -517,7 +525,7 @@ function hero(S){
 }
 
 function shortBlock(c){
-  var tags=(c.tags||[]).map(function(t){
+  var tags=(c.tags||[]).filter(function(t){ return !isEmptyAfterFills(t.text); }).map(function(t){
     return '<li class="tag '+esc(t.tone||'')+'">'+fmt(t.text)+'</li>';
   }).join('');
   var link='';
@@ -543,7 +551,7 @@ function caseBlock(c){
     return '<div class="box '+cls+'"><span class="lbl">'+esc(b.label)+'</span><p>'+fmt(b.text)+'</p></div>';
   }).join('');
 
-  var tags=(c.tags||[]).map(function(t){
+  var tags=(c.tags||[]).filter(function(t){ return !isEmptyAfterFills(t.text); }).map(function(t){
     return '<li class="tag '+esc(t.tone||'')+'">'+fmt(t.text)+'</li>';
   }).join('');
 
@@ -563,13 +571,13 @@ function caseBlock(c){
     long='<details class="more"><summary>Read the full case study</summary><div class="more-body">'+
       c.long.map(function(b){
         var out='<h4>'+fmt(b.h)+'</h4>';
-        (b.p||[]).forEach(function(p){ out+='<p>'+fmt(p)+'</p>'; });
+        (b.p||[]).forEach(function(p){ if(!isEmptyAfterFills(p)) out+='<p>'+fmt(p)+'</p>'; });
         if((b.steps||[]).length){
           out+='<ol class="trail">'+b.steps.map(function(s){
             return '<li><b>'+fmt(s.b)+'</b><span>'+fmt(s.t)+'</span></li>';}).join('')+'</ol>';
         }
         if((b.list||[]).length){
-          out+='<ul>'+b.list.map(function(i){return '<li>'+fmt(i)+'</li>';}).join('')+'</ul>';
+          out+='<ul>'+b.list.filter(function(i){return !isEmptyAfterFills(i);}).map(function(i){return '<li>'+fmt(i)+'</li>';}).join('')+'</ul>';
         }
         return out;
       }).join('')+
@@ -612,7 +620,7 @@ function about(S){
     '<div class="about-grid"><div>'+
       (has(a.photo)?'<img class="about-photo" src="'+esc(a.photo)+'" alt="Vidhan Sharma" loading="lazy">':'')+
       (has(a.opening)?'<p class="about-open">'+fmt(a.opening)+'</p>':'')+
-      '<div class="about-body">'+(a.paragraphs||[]).map(function(p){return '<p>'+fmt(p)+'</p>';}).join('')+'</div>'+
+      '<div class="about-body">'+(a.paragraphs||[]).filter(function(p){return !isEmptyAfterFills(p);}).map(function(p){return '<p>'+fmt(p)+'</p>';}).join('')+'</div>'+
     '</div><div>'+groups+'</div></div></div></section>';
 }
 

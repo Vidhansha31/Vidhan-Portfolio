@@ -1,8 +1,9 @@
 # Static site. No build step, no dependencies.
 [build]
+  command = ""
   publish = "."
 
-# Old Next.js URLs now land on the single page instead of 404ing.
+# Old Next.js URLs land on the single page instead of 404ing.
 [[redirects]]
   from = "/posts/*"
   to = "/"

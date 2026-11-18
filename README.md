@@ -86,6 +86,19 @@ If a font doesn't load the site falls back to Georgia or your system font — it
 
 ---
 
+## Draft mode — showing or hiding your to-do markers
+
+At the top of `content.js`:
+
+```js
+showFillIns: false,
+```
+
+- **`false`** (live site) — `[[notes]]` are invisible, and anything that was *only* a note is dropped cleanly. This is how the site should stay in public.
+- **`true`** (while editing) — every `[[note]]` shows as a red dashed marker so you can see what's left to write.
+
+Flip it to `true`, commit, see what's missing, fill it in, flip it back.
+
 ## Writing text
 
 Two bits of shorthand work anywhere in `content.js`:
