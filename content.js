@@ -84,19 +84,20 @@ hero: {
 
   headline: "Product problems arrive as a retailer telling you something is wrong. *I own the distance from there to a shipped fix.*",
 
-  intro: "Since April 2024 at [HotWax Commerce](https://www.hotwax.co/), a B2B SaaS order management platform for enterprise retail. I own the feature lifecycle for 8+ retail clients across North America, South America, Europe and Japan — taking requests from first conversation through requirements, build, UAT and production release, and owning the call when something breaks and the client needs to know what happened.",
+  intro: "Since April 2024 at [HotWax Commerce](https://www.hotwax.co/), a B2B SaaS order management platform for enterprise retail. I own the feature lifecycle for 8+ retail clients across four continents — from the first conversation through requirements, UAT and release — and I own the call when something breaks in production.",
 
   facts: [
     "Indore, India",
     "MCA 2025",
+    "Open to relocate",
     "Open to product and customer success roles"
   ],
 
   actions: [
-    { label: "See case studies", href: "#work", primary: true },
-    { label: "Résumé",  href: "/assets/resume/Vidhan_Sharma_Resume.pdf", external: true },
+    { label: "Get in touch", href: "#contact", primary: true },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/sharma-vidhan", external: true },
-    { label: "Get in touch", href: "#contact" }
+    { label: "Résumé",  href: "/assets/resume/Vidhan_Sharma_Resume.pdf", external: true },
+    { label: "See case studies", href: "#work" }
   ],
 
   stats: [
@@ -129,12 +130,12 @@ cases: [
   {
     eyebrow: "Case study 01 · Order management and ERP",
     title:   "From the order to the ledger",
-    summary: "An order has to survive a long trip. It arrives on a sales channel, gets measured against inventory nobody fully agrees on, is routed to a store or warehouse, is picked and shipped, and finally has to land correctly in the retailer's books. I work the whole of that path — the order management rules at the front and the NetSuite handoff at the end.",
+    summary: "An order has to survive a long trip: measured against inventory nobody fully agrees on, routed to a store or warehouse, shipped, and finally landed correctly in the retailer's books. I work the whole of that path — the order management rules at the front, the NetSuite handoff at the end.",
 
     cards: [
       { label: "Problem", text: "Stores were sent orders they couldn't fulfil, and separately, operations and finance ended up arguing from two different sets of numbers once the order reached the ERP." },
-      { label: "Insight", text: "Both failures are the same failure. Two parties believed they owned the same number — \"in stock\" to a merchandiser versus available-to-promise to the system, and the order record in the OMS versus the stock record in NetSuite." },
-      { label: "Result",  text: "Writing ownership down before the build — which system writes a field, which reads it, what wins on conflict — moved the hard conversations ahead of go-live instead of after it. Specs written this way cut engineering clarification loops and rework, and contributed to a 91% clean-release rate across 90+ releases." }
+      { label: "Insight", text: "Both failures are the same failure: two parties believing they owned the same number. \"In stock\" to a merchandiser versus available-to-promise to the system; the order record in the OMS versus the stock record in NetSuite." },
+      { label: "Result",  text: "Writing ownership down before the build moved the hard conversations ahead of go-live. Specs written this way cut clarification loops and rework, and contributed to a 91% clean-release rate across 90+ releases." }
     ],
 
     tags: [
@@ -142,29 +143,25 @@ cases: [
       { text: "SuiteScript", tone: "accent" },
       { text: "Returns and refunds posting", tone: "sand" },
       { text: "OMS · WMS · fulfilment", tone: "" },
-      { text: "100+ specs, stories and SOWs", tone: "" },
-      { text: "91% clean-release rate", tone: "accent" },
-      { text: "8+ clients · NA, SA, Europe, Japan", tone: "" }
+      { text: "91% clean-release rate", tone: "accent" }
     ],
 
     fields: {
-      "My role":  "Requirements, functional and integration specs, SuiteScript, UAT, release support",
+      "My role":  "Requirements, integration specs, SuiteScript, UAT, release support",
       "Clients":  "KREWE, gorjana, Mephisto",
       "Systems":  "HotWax OMS, NetSuite, Shopify",
-      "Domain":   "ATP, QOH, safety stock, allocation, routing, store and warehouse fulfilment, returns and refunds",
-      "Partners": "Client operations and finance teams, QA, Development",
-      "Outcome":  "Fewer clarification loops, less rework, 91% clean-release rate across 90+ releases"
+      "Domain":   "ATP, safety stock, allocation, routing, fulfilment, returns and refunds",
+      "Outcome":  "Fewer clarification loops, 91% clean-release rate across 90+ releases"
     },
 
     figure: "routing",
-    figure2: "sync",
 
     long: [
       { h: "Half the problem: what \"in stock\" means", p: [
         "Availability is the most misunderstood number in commerce. A retailer sees one quantity on a shelf, but the system is holding several: what's physically counted, what's promised to orders already placed, what's held back as a buffer, and what a sales channel is allowed to see. When those disagree the business feels it twice — as oversells the stores have to cancel, and as stock that never gets sold because the channel was shown too little.",
         "Requests arrived as business language. Stop overselling in this region. Don't send orders to that store on weekends. Make this product available for pickup but not delivery. Each one is a sentence about a rule that does not exist yet, and nobody has written down what the system does today."
       ]},
-      { h: "The other half: what the ledger believes", p: [
+      { h: "The other half: what the ledger believes", figure: "sync", p: [
         "An order that exists in the order management system has to become a record in NetSuite, and the stock it consumed has to stop being available to sell. Said like that it sounds like one message. In practice it's a negotiation — NetSuite already has an inventory number it believes, the OMS has one it believes, and they were last in agreement at some point in the past.",
         "Returns make it harder. A refund has to post correctly against the original order, the stock has to come back into the right bucket, and finance has to be able to reconcile all of it at month end. I wrote and validated SuiteScripts covering returns and refunds posting, which is where most of the edge cases live."
       ]},
@@ -191,7 +188,8 @@ cases: [
   {
     eyebrow: "Case study 02 · Customer success",
     title:   "The incident is the relationship",
-    summary: "Nobody expands their contract because of a roadmap slide. They expand because of how you behaved the last time something broke during their trading hours. This is the work between the production issue and the conversation about what else we could take on.",
+    summary: "Nobody expands their contract because of a roadmap slide. They expand because of how you behaved the last time something broke during their trading hours. This is the work in between.",
+    
 
     cards: [
       { label: "Problem", text: "A client reports orders going missing. There's no error anywhere, no obvious cause, and they're losing trading time while someone works out whose system is wrong." },
@@ -203,20 +201,19 @@ cases: [
       { text: "100+ production issues resolved", tone: "accent" },
       { text: "70% drop in repeat tickets", tone: "warm" },
       { text: "50+ feature adoptions driven", tone: "accent" },
-      { text: "Escalation management", tone: "sand" },
-      { text: "Account management", tone: "" }
+      { text: "Account management", tone: "sand" }
     ],
 
     fields: {
       "My role":  "Escalation ownership, investigation, client communication",
-      "Tools":    "SQL and PL/SQL, API responses, JSON payloads, Grafana, Linux",
-      "Partners": "Client operations teams, QA, Development",
-      "Methods":  "Order-level tracing, payload inspection, log correlation, written updates",
-      "Outcome":  "70% fewer repeat tickets; 50+ feature adoptions driven from support conversations"
+      "Tools":    "SQL and PL/SQL, JSON payloads, Grafana, Linux",
+      "Methods":  "Order-level tracing, payload inspection, log correlation",
+      "Outcome":  "70% fewer repeat tickets; 50+ feature adoptions driven"
     },
 
-    figure: "trail",
-    figureCaption: "The order matters more than the speed. Step four is the one most people skip, and it's the one that earns the next conversation.",
+    figure: "timeline",
+    figureTitle: "How an escalation runs",
+    figureCaption: "The order matters more than the speed. Step four is the one most people skip — and it's the one that earns the next conversation.",
     figureSteps: [
       { b: "Acknowledge with a time, not a promise", t: "\"I'll have a first finding in ninety minutes\" is worth more than \"we're looking into it,\" because it can be held to." },
       { b: "Reproduce on a real record", t: "One order ID that shows the problem. A concrete case beats a description of many." },
@@ -227,6 +224,14 @@ cases: [
     ],
 
     long: [
+      { h: "The six steps, in full", p: [], steps: [
+        { b: "Acknowledge with a time, not a promise", t: "\"I'll have a first finding in ninety minutes\" is worth more than \"we're looking into it,\" because it can be held to." },
+        { b: "Reproduce on a real record", t: "One order ID that shows the problem. A concrete case beats a description of many." },
+        { b: "Find where the systems diverged", t: "Query both sides, read the actual payload, walk the logs around the handoff. The failure is in the step after the last agreement." },
+        { b: "Tell them what it is before it's fixed", t: "Scope, which orders are affected, what caused it. Clients can plan around a known problem; they cannot plan around silence." },
+        { b: "Fix, validate, repair the backlog", t: "Confirm with QA, then repair the records that already broke. A fix that leaves bad data behind isn't finished." },
+        { b: "Close with what prevents it", t: "The recurrence story is what they remember in three months when they're deciding how much more to give you." }
+      ]},
       { h: "What I actually own here", p: [
         "I want to be precise about this, because it's the question an interviewer should ask. I don't own a CSAT score and I don't carry a revenue number. What I own is the behaviour that makes the next conversation possible: the escalation itself, the investigation, and what the client is told and when.",
         "The numbers I do own are these. 100+ production issues resolved through root cause analysis across logs, Grafana and SQL, and a 70% drop in repeat tickets as a result — which matters more than the raw count, because a repeat ticket means the first fix didn't hold. And 50+ feature adoptions driven by guiding clients through what the platform could already do for them.",
@@ -265,8 +270,9 @@ cases: [
     compact: true,
     eyebrow: "Performance and peak season",
     title:   "Finding out what breaks before Thanksgiving does",
-    summary: "A retailer's year can turn on four days in November, and the staff feeling it are standing at a counter with a customer waiting. I load-test the store-facing apps with JMeter ahead of peak and run performance sanity checks after each deployment through Jenkins, watching Grafana alongside. The useful number is never the average — it's the slow tail, and the concurrency at which the curve bends.",
+    summary: "A retailer's year can turn on four days in November, and the staff feeling it are standing at a counter with a customer waiting. I did this work for gorjana — load-testing the store-facing apps with JMeter ahead of peak, and running performance sanity checks after each deployment through Jenkins with Grafana alongside. The useful number is never the average; it's the slow tail, and the concurrency at which the curve bends.",
     tags: [
+      { text: "gorjana", tone: "accent" },
       { text: "Apache JMeter", tone: "sand" },
       { text: "Jenkins · Grafana", tone: "" },
       { text: "p95 and slow-tail reporting", tone: "warm" }
