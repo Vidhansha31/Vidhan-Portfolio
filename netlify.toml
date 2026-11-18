@@ -1,17 +1,15 @@
+# Static site. No build step, no dependencies.
 [build]
-  command = "npm run export"
-  publish = "out"
+  command = ""
+  publish = "."
 
-[build.environment]
-  NODE_VERSION = "18"
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
-
+# Old Next.js URLs land on the single page instead of 404ing.
 [[redirects]]
-  from = "/posts/:slug"
-  to = "/projects/:slug/"
+  from = "/posts/*"
+  to = "/"
   status = 301
 
 [[redirects]]
-  from = "/posts/:slug/"
-  to = "/projects/:slug/"
+  from = "/projects/*"
+  to = "/"
   status = 301
