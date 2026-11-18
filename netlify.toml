@@ -1,9 +1,10 @@
-# Static site. No build step, no dependencies.
+# Plain HTML site. Nothing to build, nothing to install.
 [build]
-  command = ""
+  # An explicit command here overrides whatever is set in the Netlify UI.
+  command = "echo 'static site - no build step'"
   publish = "."
 
-# Old Next.js URLs land on the single page instead of 404ing.
+# Old Next.js URLs land on the single page instead of showing 404.
 [[redirects]]
   from = "/posts/*"
   to = "/"
