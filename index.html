@@ -115,7 +115,17 @@ section{padding:clamp(48px,6.5vw,86px) 0}
    HERO
    ============================================================ */
 .hero{padding-top:clamp(40px,6vw,74px);padding-bottom:clamp(34px,4.5vw,56px)}
-.hero h1{max-width:25ch;text-wrap:balance}
+.hero-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,4vw,56px);align-items:start}
+.hero-top.no-photo{grid-template-columns:1fr}
+.hero-photo{
+  width:clamp(170px,19vw,245px);aspect-ratio:1;border-radius:50%;object-fit:cover;
+  background:var(--card);border:1px solid var(--rule);justify-self:end;margin-top:6px;
+}
+@media(max-width:840px){
+  .hero-top{grid-template-columns:1fr;gap:20px}
+  .hero-photo{width:104px;justify-self:start;order:-1;margin-top:0}
+}
+.hero h1{max-width:21ch;text-wrap:balance}
 .hero h1 em{font-style:italic;color:var(--accent)}
 .hero .intro{max-width:56ch;color:var(--ink-soft);margin-top:1.15em;font-size:1.02rem}
 .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:1.5em;padding:0;list-style:none}
@@ -512,11 +522,17 @@ function hero(S){
            '<div class="d">'+fmt(s.label)+'</div></div>';
   }).join('');
 
+  var photo = has(h.photo)
+    ? '<img class="hero-photo reveal" src="'+esc(h.photo)+'" alt="Vidhan Sharma">' : '';
+
   return '<section class="hero" id="top"><div class="wrap">'+
-    '<h1 class="reveal">'+fmt(h.headline)+'</h1>'+
-    (has(h.intro)?'<p class="intro reveal">'+fmt(h.intro)+'</p>':'')+
-    ((h.facts||[]).length?'<ul class="facts reveal">'+h.facts.map(function(f){return '<li>'+fmt(f)+'</li>';}).join('')+'</ul>':'')+
-    (acts?'<div class="acts reveal">'+acts+'</div>':'')+
+    '<div class="hero-top'+(photo?'':' no-photo')+'">'+
+    '<div class="hero-text">'+
+      '<h1 class="reveal">'+fmt(h.headline)+'</h1>'+
+      (has(h.intro)?'<p class="intro reveal">'+fmt(h.intro)+'</p>':'')+
+      ((h.facts||[]).length?'<ul class="facts reveal">'+h.facts.map(function(f){return '<li>'+fmt(f)+'</li>';}).join('')+'</ul>':'')+
+      (acts?'<div class="acts reveal">'+acts+'</div>':'')+
+    '</div>'+photo+'</div>'+
     (stats?'<div class="stats reveal">'+stats+'</div>':'')+
     ((h.clients||[]).length?'<div class="clients reveal"><span class="lbl">'+
       esc(h.clientsLabel||'')+'</span><ul>'+

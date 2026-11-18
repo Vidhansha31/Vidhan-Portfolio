@@ -80,6 +80,8 @@ nav: [
    4. HERO
    ========================================================================== */
 hero: {
+  photo: "/assets/about/Vidhan-Avatar.png",
+
   headline: "Product problems arrive as a retailer telling you something is wrong. *I own the distance from there to a shipped fix.*",
 
   intro: "Since April 2024 at [HotWax Commerce](https://www.hotwax.co/), a B2B SaaS order management platform for enterprise retail. I own the feature lifecycle for 8+ retail clients across North America, South America, Europe and Japan — taking requests from first conversation through requirements, build, UAT and production release, and owning the call when something breaks and the client needs to know what happened.",
@@ -278,7 +280,7 @@ cases: [
 about: {
   eyebrow: "About",
   title:   "A bit about me",
-  photo:   "/assets/about/Vidhan-Avatar.png",
+  photo:   "",
   opening: "I studied computer applications and kept getting pulled toward the part nobody had written down — why the system behaves the way it does, and who decided that.",
   paragraphs: [
     "I'm a Product Associate at [HotWax Commerce](https://www.hotwax.co/), working on B2B SaaS order management for enterprise retail brands. What I like about this layer is that it's unforgiving. An availability rule that's slightly wrong doesn't produce a bad screen, it produces a cancelled order and a customer who doesn't come back.",
