@@ -54,7 +54,7 @@ hero: {
     { label: "Resume",           href: "/assets/resume/Vidhan_Sharma_Resume.pdf" },
     { label: "See case studies", href: "#problems" }
   ],
-  photo: "/assets/about/Vidhan-Avatar.png"
+  photo: "/assets/about/Vidhan-Portrait.jpg"
 },
 
 /* The four-number strip. A leading + or − and a trailing % or + are kept. */
@@ -224,33 +224,34 @@ cases: [
 /* ------------------------------------------------------------ CASE 03 */
 {
   id: "peak-season",
-  thumb: "peak", thumbBadge: "gorjana · peak ready",
+  thumb: "peak", thumbBadge: "0 peak escalations",
   cardLabel: "Performance",
   cardTitle: "Peak season for gorjana: finding the limit early",
-  cardText:  "Store staff pack orders with a customer waiting. Load tests found where the apps slow down before Black Friday did.",
-  cardBig:   "p95 load testing",
+  cardText:  "Store staff pack orders with a customer waiting. Load tests and 24×7 support kept gorjana's peak season escalation-free.",
+  cardBig:   "0 peak-season escalations",
 
   label: "Case study 03 · Performance",
   title: "Peak season for gorjana: finding the limit before Black Friday does",
   pir: {
     problem: "Store staff pick and pack with a customer at the counter. A screen that takes two seconds in July becomes a queue in November.",
     insight: "Averages hide the slow tail. The test had to ramp up users the way a real peak does, and report the slowest requests, not the typical one.",
-    result:  "Ramp tests before peak and sanity runs after every deployment on the store apps. [[add your gorjana result]]"
+    result:  "Ramp tests before peak, sanity runs after every deployment, and 24×7 support through the season. Zero escalations."
   },
   chips: [
-    { b: "p95",  t: "slow-tail reporting" },
-    { b: "",     t: "Sanity runs after every deploy" },
-    { b: "",     t: "Grafana alongside every test" }
+    { b: "0",    t: "escalations through peak" },
+    { b: "24×7", t: "support during peak season" },
+    { b: "p95",  t: "slow-tail reporting" }
   ],
   glance: {
     "My role": "Test design, execution, analysis, reporting",
     "Client":  "gorjana",
     "Tools":   "Apache JMeter, Jenkins, Grafana, Linux",
-    "Cadence": "After every deployment; ramp tests before peak"
+    "Cadence": "After every deployment; ramp tests before peak",
+    "Coverage": "24×7 support through peak season"
   },
   hook: {
-    num: "4 days", tone: "",
-    text: "from Thanksgiving to Cyber Monday can decide a retailer's year",
+    num: "0", tone: "good",
+    text: "escalations from gorjana through peak season, with 24×7 support",
     diagram: {
       type: "table",
       title: "How each test mirrors a real store",
@@ -267,7 +268,7 @@ cases: [
   steps: [
     { label: "Execution", h: "Two rhythms: every deploy, and before peak",
       p: ["After each deployment, a short sanity run triggered through Jenkins confirms the critical store journeys still respond as expected. Ahead of peak season, a longer ramp pushes concurrent users up in stages while Grafana shows what the servers are doing, so a slowdown can be traced to a cause instead of just recorded.",
-          "[[What you found for gorjana: a number, a bottleneck, or what changed before peak.]]"] },
+          "Through peak I was on 24×7 support for gorjana, and the season closed with zero escalations."] },
     { label: "Learnings",
       list: [
         "The test that finds the most is the one that matches what staff actually do, including the step everyone forgets.",
