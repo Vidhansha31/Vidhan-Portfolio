@@ -537,6 +537,8 @@ function motion(){
   document.documentElement.classList.add('js');
   rv.forEach(function(n,i){n.style.transitionDelay=(i*90)+'ms';});
   requestAnimationFrame(function(){requestAnimationFrame(function(){rv.forEach(function(n){n.classList.add('in');});});});
+  /* safety net: if the tab is in the background and animation frames are paused, show everything anyway */
+  setTimeout(function(){rv.forEach(function(n){n.classList.add('in');});document.querySelectorAll('.js .cand').forEach(function(c){c.classList.add('in');});},1500);
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     if(!e.isIntersecting) return; var t=e.target; io.unobserve(t);
     if(t.classList.contains('impact')){
