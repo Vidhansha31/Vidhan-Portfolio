@@ -1,322 +1,339 @@
 /* ============================================================================
-   content.js — EVERYTHING you will ever need to edit lives in this file.
-   ----------------------------------------------------------------------------
-   You do not need to touch index.html. Ever.
+   content.js — every word, link and colour on the site lives here.
+   You never need to open index.html.
 
-   HOW TO WRITE TEXT
-     *word*            -> italic
+   WRITING
+     *word*            -> italic        **word** -> bold
      [text](https://)  -> a link
-     [[note]]          -> red dashed FILL-IN marker. Delete the [[ ]] when done.
+     [[note]]          -> a red to-do marker (hidden when showFillIns is false)
 
-   HOW TO DELETE SOMETHING
-     Set it to "" and it disappears. To remove a case study, delete its
+   REMOVING THINGS
+     Set any text to "" and it disappears. To remove a case study, delete its
      { ... } block and the comma after it.
 
-   RULES THAT WILL SAVE YOU
-     - Text sits between "quotes". A " inside your text is written \"
-     - Items in a list are separated by commas.
-     - Never delete a { } or [ ] bracket.
-     If the page goes blank, revert your last commit on github.com.
-
-   WHY IT SAYS WHAT IT SAYS -> see RATIONALE.md
+   SAFETY
+     Text sits inside "quotes". A " inside text is written \"
+     If the page shows an error box, revert your last commit on github.com.
    ========================================================================== */
 
 window.SITE = {
 
-/* ==========================================================================
-   0. DRAFT MODE
-   true  = show the red [[fill-in]] markers (use while you're editing)
-   false = hide them, and drop anything that was only a marker (live site)
-   ========================================================================== */
 showFillIns: false,
 
-/* ==========================================================================
-   1. THEME
-   ========================================================================== */
+/* Colours. Any of these can be changed; they match the reference palette. */
 theme: {
-  paper:      "#F9FAF5",
-  card:       "#FFFFFD",
-  ink:        "#252B26",
-  inkSoft:    "#6B7268",
-  rule:       "#E2E6DD",
-  accent:     "#4A7C56",   // sage — resolved, settled, selected
-  accentSoft: "#EBF2EB",
-  accentDeep: "#2F5639",   // deep forest — headings, hover states
-  warm:       "#C87A68",   // rose — problems, gaps, unresolved
-  warmSoft:   "#F7E9E5",
-  sand:       "#C9A227",   // ochre — in-progress, third category
-  sandSoft:   "#F6EFD8",
-  radius:     "10px",
-  maxWidth:   "1080px"
+  bg: "#FAF9F6", surface: "#FFFFFF", ink: "#23332A", muted: "#5F6E65", line: "#E7E4DC",
+  accent: "#4E7A5F", sage: "#7A9E87", accentSoft: "#EAF1EB", blush: "#E8B4A8", blushSoft: "#F9E9E4",
+  good: "#3F7055", goodSoft: "#E6F0E8", warn: "#A8553F", warnSoft: "#F8E4DE", loss: "#D9907E"
 },
 
-fonts: {
-  display: "'Source Serif 4', Georgia, serif",
-  body:    "'Public Sans', system-ui, sans-serif",
-  googleFonts: "Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700"
-},
-
-/* ==========================================================================
-   2. TAB + LINK PREVIEWS
-   ========================================================================== */
 meta: {
-  tabTitle:    "Vidhan Sharma — Product and customer success, B2B SaaS",
-  description: "Product Associate at HotWax Commerce. Enterprise order management, supply chain execution, NetSuite integration and client delivery for retail brands.",
-  footer:      "© 2026 Vidhan Sharma",
-  favicon:     "/favicons/favicon.ico"
+  tabTitle: "Vidhan Sharma — Product and customer success, B2B SaaS",
+  footer:   "© 2026 Vidhan Sharma"
 },
 
-/* ==========================================================================
-   3. TOP BAR
-   ========================================================================== */
-brand: "Vidhan Sharma",
+/* ============================================================== TOP BAR */
+name: "Vidhan Sharma",
 nav: [
-  { label: "Work",    href: "#work" },
-  { label: "About",   href: "#about" },
-  { label: "Contact", href: "#contact" }
+  { label: "Work",             href: "#work" },
+  { label: "Product thinking", href: "#vitaran" },
+  { label: "About",            href: "#about" },
+  { label: "Contact",          href: "#contact" },
+  { label: "Resume",           href: "/assets/resume/Vidhan_Sharma_Resume.pdf" }
 ],
 
-/* ==========================================================================
-   4. HERO
-   ========================================================================== */
+/* ============================================================== HERO */
 hero: {
-  photo: "/assets/about/Vidhan-Avatar.png",
-
-  headline: "Product problems arrive as a retailer telling you something is wrong. *I own the distance from there to a shipped fix.*",
-
-  intro: "Since April 2024 at [HotWax Commerce](https://www.hotwax.co/), a B2B SaaS order management platform for enterprise retail. I own the feature lifecycle for 8+ retail clients across four continents — from the first conversation through requirements, UAT and release — and I own the call when something breaks in production.",
-
-  facts: [
-    "Indore, India",
-    "MCA 2025",
-    "Open to relocate",
-    "Open to product and customer success roles"
-  ],
-
+  label:    "Product Associate · Order management & customer success",
+  headline: "Problems arrive as a retailer saying something is wrong. *I own the distance to a shipped fix.*",
+  lede:     "2.5+ years at [HotWax Commerce](https://www.hotwax.co/), an enterprise SaaS order management system for retail. I work across the whole order lifecycle, from capture and routing to fulfilment, returns and exchanges, for 8+ brands on four continents.",
+  facts:    ["Indore, India", "MCA 2025", "Open to relocate", "Open to product and customer success roles"],
   actions: [
-    { label: "Get in touch", href: "#contact", primary: true },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/sharma-vidhan", external: true },
-    { label: "Résumé",  href: "/assets/resume/Vidhan_Sharma_Resume.pdf", external: true },
-    { label: "See case studies", href: "#work" }
+    { label: "Get in touch",     href: "#contact", primary: true },
+    { label: "LinkedIn",         href: "https://www.linkedin.com/in/sharma-vidhan" },
+    { label: "Resume",           href: "/assets/resume/Vidhan_Sharma_Resume.pdf" },
+    { label: "See case studies", href: "#problems" }
   ],
-
-  stats: [
-    { value: "8+",   tone: "accent", label: "enterprise retail clients across four continents" },
-    { value: "100+", tone: "accent", label: "production issues resolved by root cause analysis" },
-    { value: "70%",  tone: "warm",   label: "drop in repeat tickets from those fixes" },
-    { value: "91%",  tone: "sand",   label: "clean-release rate across 90+ planned and emergency releases" }
-  ],
-
-  /* The brands HotWax names publicly on hotwax.co. Shown as a plain text
-     line, not logos — logos would be their asset, not yours. */
-  clientsLabel: "Retailer implementations I've worked on",
-  clients: ["KREWE", "Steve Madden", "gorjana", "Mephisto", "Perry Ellis", "New Era Cap", "Ashley Stewart", "E-bikeshop"]
+  photo: "/assets/about/Vidhan-Avatar.png"
 },
 
-/* ==========================================================================
-   5. WORK
-   --------------------------------------------------------------------------
-   Two full case studies, then shorter entries. Set compact: true to move a
-   case study into the short list; remove it to promote it back to full.
-   ========================================================================== */
-workIntro: {
-  eyebrow: "Selected work · HotWax Commerce",
-  title:   "Two problems in depth, and what else I've worked on"
+/* The four-number strip. A leading + or − and a trailing % or + are kept. */
+impact: [
+  { value: "8+",   label: "enterprise retail clients across four continents" },
+  { value: "100+", label: "production issues resolved at the root cause" },
+  { value: "−70%", label: "repeat tickets after those fixes" },
+  { value: "91%",  label: "clean-release rate across 90+ releases" }
+],
+
+clients: {
+  label: "Brands I've worked with",
+  names: ["KREWE", "Steve Madden", "gorjana", "Mephisto", "Perry Ellis", "New Era Cap", "Ashley Stewart", "E-bikeshop"]
+},
+
+/* ============================================================== WORK */
+work: {
+  label: "Selected work · Enterprise order management",
+  title: "Three problems, from the client's first message to production"
 },
 
 cases: [
 
-  /* ------------------------------------------------------- FULL CASE 1 */
-  {
-    eyebrow: "Case study 01 · Order management and ERP",
-    title:   "From the order to the ledger",
-    summary: "An order has to survive a long trip: measured against inventory nobody fully agrees on, routed to a store or warehouse, shipped, and finally landed correctly in the retailer's books. I work the whole of that path — the order management rules at the front, the NetSuite handoff at the end.",
+/* ------------------------------------------------------------ CASE 01 */
+{
+  id: "order-to-ledger",
+  thumb: "ledger", thumbBadge: "91% clean releases",
+  cardLabel: "Order management & ERP",
+  cardTitle: "Order to ledger: making the OMS and NetSuite agree",
+  cardText:  "Stores got orders they couldn't ship, and finance and ops argued from different numbers. Deciding who owns each field fixed both.",
+  cardBig:   "91% clean releases",
 
-    cards: [
-      { label: "Problem", text: "Stores were sent orders they couldn't fulfil, and separately, operations and finance ended up arguing from two different sets of numbers once the order reached the ERP." },
-      { label: "Insight", text: "Both failures are the same failure: two parties believing they owned the same number. \"In stock\" to a merchandiser versus available-to-promise to the system; the order record in the OMS versus the stock record in NetSuite." },
-      { label: "Result",  text: "Writing ownership down before the build moved the hard conversations ahead of go-live. Specs written this way cut clarification loops and rework, and contributed to a 91% clean-release rate across 90+ releases." }
-    ],
-
-    tags: [
-      { text: "NetSuite", tone: "accent" },
-      { text: "SuiteScript", tone: "accent" },
-      { text: "Returns and refunds posting", tone: "sand" },
-      { text: "OMS · WMS · fulfilment", tone: "" },
-      { text: "91% clean-release rate", tone: "accent" }
-    ],
-
-    fields: {
-      "My role":  "Requirements, integration specs, SuiteScript, UAT, release support",
-      "Clients":  "KREWE, gorjana, Mephisto",
-      "Systems":  "HotWax OMS, NetSuite, Shopify",
-      "Domain":   "ATP, safety stock, allocation, routing, fulfilment, returns and refunds",
-      "Outcome":  "Fewer clarification loops, 91% clean-release rate across 90+ releases"
-    },
-
-    figure: "routing",
-
-    long: [
-      { h: "Half the problem: what \"in stock\" means", p: [
-        "Availability is the most misunderstood number in commerce. A retailer sees one quantity on a shelf, but the system is holding several: what's physically counted, what's promised to orders already placed, what's held back as a buffer, and what a sales channel is allowed to see. When those disagree the business feels it twice — as oversells the stores have to cancel, and as stock that never gets sold because the channel was shown too little.",
-        "Requests arrived as business language. Stop overselling in this region. Don't send orders to that store on weekends. Make this product available for pickup but not delivery. Each one is a sentence about a rule that does not exist yet, and nobody has written down what the system does today."
-      ]},
-      { h: "The other half: what the ledger believes", figure: "sync", p: [
-        "An order that exists in the order management system has to become a record in NetSuite, and the stock it consumed has to stop being available to sell. Said like that it sounds like one message. In practice it's a negotiation — NetSuite already has an inventory number it believes, the OMS has one it believes, and they were last in agreement at some point in the past.",
-        "Returns make it harder. A refund has to post correctly against the original order, the stock has to come back into the right bucket, and finance has to be able to reconcile all of it at month end. I wrote and validated SuiteScripts covering returns and refunds posting, which is where most of the edge cases live."
-      ]},
-      { h: "How I work a requirement", p: [], steps: [
-        { b: "State today's behaviour", t: "Describe what the system currently does, in the client's vocabulary, and get them to agree that's what they're seeing." },
-        { b: "Name the expected outcome", t: "One sentence, in business terms, about what should happen instead." },
-        { b: "Walk the dependencies", t: "Inventory sync, routing, the channel feed, the warehouse, the ERP, returns in flight." },
-        { b: "Settle field ownership", t: "Exactly one system writes each field. If two do, that's a defect waiting for a quarter-end." },
-        { b: "Write acceptance criteria", t: "Observable behaviour QA can pass or fail without asking me what I meant." },
-        { b: "Stay through UAT and release", t: "Validate in UAT, follow issues with QA and Development, confirm behaviour in production." }
-      ]},
-      { h: "The part that actually mattered", p: [
-        "Operations and finance have different definitions of done. Operations is finished when the customer has the goods; finance is finished when the numbers close. An integration spec that only satisfies one of them gets escalated by the other, usually at month end. Writing both acceptance views into the same document was the change that made these projects calmer.",
-        "Across 8+ clients the same pattern held: the specs that survived contact with production were the ones that named field ownership and failure handling before anyone wrote code. That discipline is most of why 91% of the 90+ releases I planned and coordinated went out clean, emergency deployments included.",
-        "[[Optional: name one specific SuiteScript or reconciliation gap you caught in UAT. A concrete example here is the strongest thing you could add.]]"
-      ]},
-      { h: "What I'd do differently", p: [
-        "I used to write the requirement first and find the edge cases in UAT, which is the expensive place to find them. Now the edge-case pass happens before the spec is shared, and the list of what the change deliberately does *not* cover goes in the document."
-      ]}
-    ]
+  label: "Case study 01 · Order management & ERP",
+  title: "Order to ledger: making the OMS and NetSuite agree on every number",
+  pir: {
+    problem: "Stores were sent orders they couldn't fulfil. Once orders reached NetSuite, ops and finance argued from different numbers.",
+    insight: "Both were the same failure: two systems each believed they owned the same number, and nobody had written down which one did.",
+    result:  "Field ownership is now settled in every spec before build. 91% of 90+ releases went out clean."
   },
-
-  /* ------------------------------------------------------- FULL CASE 2 */
-  {
-    eyebrow: "Case study 02 · Customer success",
-    title:   "The incident is the relationship",
-    summary: "Nobody expands their contract because of a roadmap slide. They expand because of how you behaved the last time something broke during their trading hours. This is the work in between.",
-    
-
-    cards: [
-      { label: "Problem", text: "A client reports orders going missing. There's no error anywhere, no obvious cause, and they're losing trading time while someone works out whose system is wrong." },
-      { label: "Insight", text: "Clients need the fix, but they need something else first: evidence that a competent person owns this and will tell them the truth about it before it's resolved. The status update is part of the product." },
-      { label: "Result",  text: "100+ production issues resolved by root cause analysis, driving a 70% drop in repeat tickets. The conversation then changes: I've driven adoption of 50+ features by turning support conversations into roadmap inputs." }
-    ],
-
-    tags: [
-      { text: "100+ production issues resolved", tone: "accent" },
-      { text: "70% drop in repeat tickets", tone: "warm" },
-      { text: "50+ feature adoptions driven", tone: "accent" },
-      { text: "Account management", tone: "sand" }
-    ],
-
-    fields: {
-      "My role":  "Escalation ownership, investigation, client communication",
-      "Tools":    "SQL and PL/SQL, JSON payloads, Grafana, Linux",
-      "Methods":  "Order-level tracing, payload inspection, log correlation",
-      "Outcome":  "70% fewer repeat tickets; 50+ feature adoptions driven"
-    },
-
-    figure: "timeline",
-    figureTitle: "How an escalation runs",
-    figureCaption: "The order matters more than the speed. Step four is the one most people skip — and it's the one that earns the next conversation.",
-    figureSteps: [
-      { b: "Acknowledge with a time, not a promise", t: "\"I'll have a first finding in ninety minutes\" is worth more than \"we're looking into it,\" because it can be held to." },
-      { b: "Reproduce on a real record", t: "One order ID that shows the problem. A concrete case beats a description of many." },
-      { b: "Find where the systems diverged", t: "Query both sides, read the actual payload, walk the logs around the handoff. The failure is in the step after the last agreement." },
-      { b: "Tell them what it is before it's fixed", t: "Scope, which orders are affected, what caused it. Clients can plan around a known problem; they cannot plan around silence." },
-      { b: "Fix, validate, repair the backlog", t: "Confirm with QA, then repair the records that already broke. A fix that leaves bad data behind isn't finished." },
-      { b: "Close with what prevents it", t: "The recurrence story is what they remember in three months when they're deciding how much more to give you." }
-    ],
-
-    long: [
-      { h: "The six steps, in full", p: [], steps: [
-        { b: "Acknowledge with a time, not a promise", t: "\"I'll have a first finding in ninety minutes\" is worth more than \"we're looking into it,\" because it can be held to." },
-        { b: "Reproduce on a real record", t: "One order ID that shows the problem. A concrete case beats a description of many." },
-        { b: "Find where the systems diverged", t: "Query both sides, read the actual payload, walk the logs around the handoff. The failure is in the step after the last agreement." },
-        { b: "Tell them what it is before it's fixed", t: "Scope, which orders are affected, what caused it. Clients can plan around a known problem; they cannot plan around silence." },
-        { b: "Fix, validate, repair the backlog", t: "Confirm with QA, then repair the records that already broke. A fix that leaves bad data behind isn't finished." },
-        { b: "Close with what prevents it", t: "The recurrence story is what they remember in three months when they're deciding how much more to give you." }
-      ]},
-      { h: "What I actually own here", p: [
-        "I want to be precise about this, because it's the question an interviewer should ask. I don't own a CSAT score and I don't carry a revenue number. What I own is the behaviour that makes the next conversation possible: the escalation itself, the investigation, and what the client is told and when.",
-        "The numbers I do own are these. 100+ production issues resolved through root cause analysis across logs, Grafana and SQL, and a 70% drop in repeat tickets as a result — which matters more than the raw count, because a repeat ticket means the first fix didn't hold. And 50+ feature adoptions driven by guiding clients through what the platform could already do for them.",
-        "That last number is the honest version of upsell. In B2B SaaS it doesn't look like selling. It looks like a client who has watched you handle three bad days well, asking what else you could take on — and a support conversation becoming a roadmap input. I've been in those conversations and contributed to what came out of them. I haven't closed the commercial side of them."
-      ]},
-      { h: "Why the written update matters more than the fix", p: [
-        "A retailer in the middle of an incident is making decisions whether or not I give them information. They're deciding whether to pause a channel, call the stores, or tell their own customers something. Every hour of silence is an hour they spend guessing, and the guesses are expensive.",
-        "So the update goes out before the answer is complete, and it says what is known, what isn't, and when the next one is coming. That's harder than it sounds when you don't yet know the cause and would rather wait until you look competent."
-      ]},
-      { h: "What changed in how I handle them", p: [
-        "Early on I treated an escalation as a technical problem with a client attached. That's backwards. It's a relationship event with a technical problem inside it, and the technical part is often the easier half.",
-        "The other change was handing over properly. Bringing Development a conclusion without evidence always produced the same question — how do you know? Now the handover is the order ID, the queries, the payload, the log line, and the sentence that ties them together. Ten minutes more work, one whole round trip less."
-      ]}
-    ]
-  },
-
-  /* ------------------------------------------------------- SHORT ENTRIES
-     These render as compact cards. Delete compact: true to promote one
-     back into a full case study with its diagram and expander. */
-  {
-    compact: true,
-    eyebrow: "Product ownership",
-    title:   "Vitaran — distribution management platform",
-    summary: "A distribution management platform I own end to end: concept, scope, requirements, workflows and interface design. It runs a dairy distribution operation — customer-specific pricing, inventory, daily delivery routes, expenses and invoicing — and is live and in daily use. The core product decision was making price a property of the customer rather than a manual exception, which is what turns a spreadsheet into a system.",
-    logo: "/assets/posts/vitaran/logo-vitran-secondary.png",
-    tags: [
-      { text: "Live and in use", tone: "accent" },
-      { text: "Product owner", tone: "accent" },
-      { text: "Figma — my own design work", tone: "sand" },
-      { text: "Next.js · NestJS · PostgreSQL · AWS", tone: "" }
-    ],
-    link: { label: "[[Add your Figma link — set showFillIns to true to see this reminder on the page]]", href: "" }
-  },
-
-  {
-    compact: true,
-    eyebrow: "Performance and peak season",
-    title:   "Finding out what breaks before Thanksgiving does",
-    summary: "A retailer's year can turn on four days in November, and the staff feeling it are standing at a counter with a customer waiting. I did this work for gorjana — load-testing the store-facing apps with JMeter ahead of peak, and running performance sanity checks after each deployment through Jenkins with Grafana alongside. The useful number is never the average; it's the slow tail, and the concurrency at which the curve bends.",
-    tags: [
-      { text: "gorjana", tone: "accent" },
-      { text: "Apache JMeter", tone: "sand" },
-      { text: "Jenkins · Grafana", tone: "" },
-      { text: "p95 and slow-tail reporting", tone: "warm" }
-    ]
-  }
-],
-
-/* ==========================================================================
-   6. ABOUT
-   ========================================================================== */
-about: {
-  eyebrow: "About",
-  title:   "A bit about me",
-  photo:   "",
-  opening: "I studied computer applications and kept getting pulled toward the part nobody had written down — why the system behaves the way it does, and who decided that.",
-  paragraphs: [
-    "I'm a Product Associate at [HotWax Commerce](https://www.hotwax.co/), working on B2B SaaS order management for enterprise retail brands. What I like about this layer is that it's unforgiving. An availability rule that's slightly wrong doesn't produce a bad screen, it produces a cancelled order and a customer who doesn't come back.",
-    "That consequence is why I ended up as comfortable in logs and SQL as in a requirements document. You can't specify behaviour for a system you can't observe — and you can't credibly explain an incident to a client if you needed someone else to tell you what happened.",
-    "Most of my work sits between two groups who don't naturally speak the same language: the retailer describing an operational problem, and the engineers who need it as a testable statement. I'm increasingly convinced that translation is the job, whatever the title on the role says.",
-    "I started in engineering — MCA, hands-on with SQL, Java, Jenkins and Grafana — which is why I can sit with a client in the morning and a developer in the afternoon and translate between them. Alongside the role I own Vitaran, a distribution management platform now live and in daily use, from concept through requirements and design.",
-    "[[Two lines about you off the clock. It's the only part of a portfolio that sounds like a person — worth adding.]]"
+  chips: [
+    { b: "91%",  t: "clean-release rate" },
+    { b: "90+",  t: "releases planned and coordinated" },
+    { b: "100+", t: "specs, stories and SOWs" }
   ],
-
-  skillGroups: [
-    { label: "Product",  items: ["Product management", "Requirement gathering", "Functional specifications", "User stories and SOWs", "Acceptance criteria", "Feature lifecycle ownership", "Roadmap input", "Prioritisation against capacity", "UAT", "Release planning"] },
-    { label: "Customer and account", items: ["Account management", "Escalation management", "Client communication", "Incident reporting", "Customer support", "Stakeholder alignment", "Adoption and enablement", "B2B SaaS client delivery"] },
-    { label: "Commerce and supply chain", items: ["Supply chain management", "Omnichannel order management (OMS)", "WMS and warehouse fulfilment", "Available to promise", "Quantity on hand", "Safety stock", "Inventory planning", "Allocation and routing", "Returns and refunds", "Production support", "Retail tech"] },
-    { label: "Systems",  items: ["NetSuite", "SAP", "Shopify", "WooCommerce", "HubSpot", "Jira", "Confluence", "Figma"] },
-    { label: "Technical",items: ["SQL and PL/SQL", "SuiteScript", "REST APIs, JSON", "Apache JMeter", "Jenkins", "Grafana", "Linux", "Core Java"] }
+  glance: {
+    "My role": "Requirements, integration specs, SuiteScript, UAT and release",
+    "Clients": "KREWE, gorjana, Mephisto",
+    "Systems": "HotWax OMS, NetSuite, Shopify",
+    "Methods": "Behaviour mapping, field-ownership specs, edge-case reviews"
+  },
+  hook: {
+    num: "4", tone: "",
+    text: "different numbers hide behind one word: \"in stock\"",
+    diagram: {
+      type: "bars",
+      title: "What one product at one store actually holds",
+      rows: [
+        { label: "On hand",              segs: [[100, "base"]],               v: "100" },
+        { label: "After open orders",    segs: [[70, ""], [30, "lost"]],      v: "70"  },
+        { label: "After safety stock",   segs: [[60, ""], [10, "lost"]],      v: "60"  },
+        { label: "Available to promise", segs: [[60, ""]],                    v: "60"  }
+      ],
+      legend: [["", "Can be sold"], ["lost", "Held back"]]
+    }
+  },
+  steps: [
+    { label: "Problem", h: "Stores kept getting orders they couldn't ship",
+      p: ["Retailers described symptoms, not rules. A store that keeps receiving orders it can't fulfil. A product that shows in stock, then cancels. Each request was a sentence about a rule that didn't exist yet, and nobody had written down what the system did today."] },
+    { label: "Insight", h: "One word, four numbers, no owner",
+      p: ["To a merchandiser, \"in stock\" meant what's on the shelf. To the system it meant available to promise: on hand, minus open orders, minus safety stock. The same gap appeared again at the ERP. The OMS owned the order, NetSuite owned the stock record, and when both changed a number nobody knew which one was right."],
+      diagram: { type: "routing", title: "Where one order gets served from",
+        rows: [
+          { name: "Store A",   why: "nearest, but below safety stock",       tag: "Not eligible", state: "no"  },
+          { name: "Store B",   why: "stock held by an earlier order",        tag: "Not eligible", state: "no"  },
+          { name: "Store C",   why: "available to promise clears the line",  tag: "Selected",     state: "win" },
+          { name: "Warehouse", why: "eligible, higher cost to serve",        tag: "Fallback",     state: ""    }
+        ] } },
+    { label: "Decision", h: "Settle who owns each field before anyone builds",
+      p: ["Every integration spec now answers four questions up front."],
+      diagram: { type: "table", head: ["Question", "Why it matters"], rows: [
+        ["Which system writes this field?", "If two systems write it, that's a defect waiting for month-end."],
+        ["How fresh does it need to be?",    "Real time, batched or on an event, and how much drift is acceptable."],
+        ["What happens when the sync fails?","A silent failure surfaces weeks later as a finance question."],
+        ["How do we prove they agree?",      "A reconciliation anyone can run without a developer."]
+      ] },
+      quote: "Most integration failures aren't transport failures. The data moves fine. Nobody agreed which system was allowed to be right." },
+    { label: "Execution", h: "SuiteScripts for returns and refunds, validated in UAT",
+      p: ["For KREWE, gorjana and Mephisto, I wrote and validated SuiteScripts that post returns and refunds into NetSuite, where most of the edge cases live: a refund has to land against the original order, stock has to come back to the right place, and finance has to reconcile it at month-end."],
+      diagram: { type: "sync", left: ["HotWax OMS", "order lifecycle, allocation, fulfilment"], right: ["NetSuite", "item master, stock record, the books"],
+        flows: [[">", "Orders and fulfilment"], ["<", "Item and inventory records"], [">", "Returns and refunds"], ["<", "Financial posting"]] },
+      after: ["I wrote acceptance criteria from both sides: operations is done when the customer has the goods, finance is done when the numbers close. Specs that satisfied only one side got escalated by the other."] },
+    { label: "Learnings",
+      list: [
+        "Start every requirement by describing what the system does today, in the client's words.",
+        "Write down what a change deliberately does *not* cover. It prevents more rework than the spec itself.",
+        "Find edge cases before the spec is shared. UAT is the expensive place to find them."
+      ] }
   ]
 },
 
-/* ==========================================================================
-   7. CONTACT
-   ========================================================================== */
+/* ------------------------------------------------------------ CASE 02 */
+{
+  id: "escalations",
+  thumb: "incident", thumbBadge: "−70% repeat tickets",
+  cardLabel: "Customer success",
+  cardTitle: "Production escalations: the incident is the relationship",
+  cardText:  "Orders went missing with no error anywhere. A six-step routine turned bad days into clients asking what else we could take on.",
+  cardBig:   "−70% repeat tickets",
+
+  label: "Case study 02 · Customer success",
+  title: "The incident is the relationship: turning production escalations into trust",
+  pir: {
+    problem: "A client reports orders going missing. No error anywhere, and they're losing trading time while someone works out whose system is wrong.",
+    insight: "Clients need an honest update before they need the fix. The status update is part of the product.",
+    result:  "100+ issues fixed at the root. Repeat tickets down 70%, and 50+ features adopted from support conversations."
+  },
+  chips: [
+    { b: "100+", t: "production issues resolved" },
+    { b: "−70%", t: "repeat tickets" },
+    { b: "50+",  t: "feature adoptions driven" }
+  ],
+  glance: {
+    "My role":  "Escalation owner, from first report to closure",
+    "Tools":    "SQL, PL/SQL, JSON payloads, Grafana, Linux",
+    "Methods":  "Order-level tracing, log correlation, written status updates",
+    "Partners": "Client operations teams, QA, Development"
+  },
+  hook: {
+    num: "−70%", tone: "good",
+    text: "repeat tickets once fixes reached the root cause",
+    diagram: {
+      type: "bars",
+      title: "Repeat tickets, indexed to before",
+      rows: [
+        { label: "Before root-cause fixes", segs: [[100, "lost"]], v: "100" },
+        { label: "After",                   segs: [[30, ""]],      v: "30"  }
+      ]
+    }
+  },
+  steps: [
+    { label: "Problem", h: "Orders missing, and no system saying why",
+      p: ["Integration failures rarely announce themselves. The order exists in one system and not the other, with no error, because from each system's point of view nothing went wrong. The report is usually a person: a client saying some of yesterday's orders are missing."] },
+    { label: "Insight", h: "The update matters before the answer does",
+      p: ["A retailer mid-incident is making decisions whether or not I give them information: pause a channel, call the stores, tell their own customers. Every hour of silence is an hour of expensive guessing. So the update goes out before the answer is complete, saying what's known, what isn't, and when the next update comes."] },
+    { label: "Approach", h: "Six steps, the same every time",
+      diagram: { type: "timeline", title: "How I run an escalation", rows: [
+        ["Acknowledge with a time, not a promise", "\"first finding in 90 minutes\" can be held to"],
+        ["Reproduce on one real order",            "one order ID beats a description of many"],
+        ["Find where the systems diverged",        "query both sides, read the payload, walk the logs"],
+        ["Tell them before it's fixed",            "which orders, what caused it, what's next"],
+        ["Fix, validate, repair the backlog",      "a fix that leaves bad data isn't finished"],
+        ["Close with what prevents it",            "the part they remember at renewal"]
+      ] },
+      after: ["The handover to Development is the order ID, both queries, the payload, the log line, and one sentence tying them together. Ten minutes more work, one round trip fewer."] },
+    { label: "Ownership", h: "What I own, and what I don't",
+      p: ["I don't own a CSAT score or a revenue number. I own the escalation itself, the investigation, and what the client is told and when. The numbers I do own: 100+ issues resolved at the root and a 70% drop in repeat tickets, which matters more than the count, because a repeat ticket means the first fix didn't hold.",
+          "Upsell in B2B SaaS rarely looks like selling. It looks like a client who has watched you handle three bad days well, asking what else you could take on. I've driven adoption of 50+ features by turning support conversations into roadmap inputs."] },
+    { label: "Learnings",
+      list: [
+        "An escalation is a relationship event with a technical problem inside it, not the other way round.",
+        "Send the update before you look competent. Clients plan around a known problem, not around silence.",
+        "Count repeat tickets, not closed tickets. Only one of them tells you the fix held."
+      ] }
+  ]
+},
+
+/* ------------------------------------------------------------ CASE 03 */
+{
+  id: "peak-season",
+  thumb: "peak", thumbBadge: "gorjana · peak ready",
+  cardLabel: "Performance",
+  cardTitle: "Peak season for gorjana: finding the limit early",
+  cardText:  "Store staff pack orders with a customer waiting. Load tests found where the apps slow down before Black Friday did.",
+  cardBig:   "p95 load testing",
+
+  label: "Case study 03 · Performance",
+  title: "Peak season for gorjana: finding the limit before Black Friday does",
+  pir: {
+    problem: "Store staff pick and pack with a customer at the counter. A screen that takes two seconds in July becomes a queue in November.",
+    insight: "Averages hide the slow tail. The test had to ramp up users the way a real peak does, and report the slowest requests, not the typical one.",
+    result:  "Ramp tests before peak and sanity runs after every deployment on the store apps. [[add your gorjana result]]"
+  },
+  chips: [
+    { b: "p95",  t: "slow-tail reporting" },
+    { b: "",     t: "Sanity runs after every deploy" },
+    { b: "",     t: "Grafana alongside every test" }
+  ],
+  glance: {
+    "My role": "Test design, execution, analysis, reporting",
+    "Client":  "gorjana",
+    "Tools":   "Apache JMeter, Jenkins, Grafana, Linux",
+    "Cadence": "After every deployment; ramp tests before peak"
+  },
+  hook: {
+    num: "4 days", tone: "",
+    text: "from Thanksgiving to Cyber Monday can decide a retailer's year",
+    diagram: {
+      type: "table",
+      title: "How each test mirrors a real store",
+      head: ["In the test", "In the store"],
+      rows: [
+        ["Users ramped in stages",  "Staff signing in across a shift, not all at once"],
+        ["Think time between steps","A person reading the screen before tapping"],
+        ["Whole journey, in order", "Pick, pack and ship as staff actually do it"],
+        ["Response assertions",     "Catches a fast reply that is really an error"],
+        ["p95 reporting",           "The slowest 5%, which is what the counter feels"]
+      ]
+    }
+  },
+  steps: [
+    { label: "Execution", h: "Two rhythms: every deploy, and before peak",
+      p: ["After each deployment, a short sanity run triggered through Jenkins confirms the critical store journeys still respond as expected. Ahead of peak season, a longer ramp pushes concurrent users up in stages while Grafana shows what the servers are doing, so a slowdown can be traced to a cause instead of just recorded.",
+          "[[What you found for gorjana: a number, a bottleneck, or what changed before peak.]]"] },
+    { label: "Learnings",
+      list: [
+        "The test that finds the most is the one that matches what staff actually do, including the step everyone forgets.",
+        "Report findings as a business consequence. \"The pack screen passes four seconds at peak load\" gets fixed faster than a throughput chart."
+      ] }
+  ]
+}
+],
+
+/* ============================================================== PRODUCT THINKING */
+product: {
+  id: "vitaran",
+  logo: "/assets/posts/vitaran/logo-vitran-secondary.png", logoAlt: "Vitaran logo",
+  label: "Product thinking · My own product",
+  title: "Vitaran: a distribution platform where every customer has their own price",
+  summary: "A product I own end to end, from concept and requirements to the Figma designs. It's live and in daily use, running pricing, inventory, delivery routes and invoicing for a dairy distribution business.",
+  link: { label: "Open the designs in Figma ↗", href: "https://www.figma.com/design/8yL9abQ85ZEKzlZeprhZgM/Vitaran?node-id=1302-2539&t=eR8DJlQ1SrvulyAn-1" },
+  moreLabel: "See the highlights",
+  highlights: [
+    { label: "The core decision",
+      p: ["Every customer had their own rate, agreed years ago and remembered rather than recorded. Most tools treat a special rate as a manual exception, which leaves the remembering with a person. In Vitaran, price is a property of the customer, applied automatically to every delivery and invoice."] },
+    { label: "Key product decisions",
+      list: [
+        "Two separate experiences, not one app with permissions: breadth for the owner, one screen for the person on the route.",
+        "Invoices go out on WhatsApp, where customers already read messages, instead of asking them to install an app.",
+        "Scope held to four things: pricing, inventory, deliveries and expenses. Saying no to the rest kept it shippable."
+      ] },
+    { label: "Built with",
+      p: ["Next.js, NestJS, PostgreSQL and AWS. Designed in Figma, entirely my own work."] }
+  ],
+  figure: {
+    type: "split",
+    cols: [
+      { label: "Owner", items: ["Customers and their own rates", "Inventory as it moves", "Deliveries across routes", "Expenses and invoicing"] },
+      { label: "Delivery staff", items: ["Today's route, nothing else", "Mark delivered, adjust quantity", "Works one-handed on a phone"] }
+    ],
+    caption: "Two users, two products. Keeping that line clean was the hardest scope call."
+  }
+},
+
+/* ============================================================== ABOUT */
+about: {
+  label: "About",
+  title: "A bit about me",
+  paragraphs: [
+    "I studied computer applications but kept getting pulled toward the *why* behind the system. So I moved from how software gets built to deciding what it should do, and for whom.",
+    "At [HotWax Commerce](https://www.hotwax.co/), I sit between enterprise retailers and the engineers who build for them, across order capture, inventory, routing, fulfilment, returns and integrations with Shopify, ERPs, WMS and POS. I like problems where the client can describe the pain, the logs can show the cause, and the fix fits in a spec.",
+    "Off the clock, I'm usually on a cricket ground, at a snooker table, or in a pool."
+  ],
+  skills: [
+    { label: "Product",  items: ["Requirements & specs", "User stories & SOWs", "Acceptance criteria", "UAT", "Release planning", "Prioritisation"] },
+    { label: "Customer success", items: ["Escalation management", "Account management", "Client communication", "Feature adoption"] },
+    { label: "Commerce & supply chain", items: ["OMS", "WMS", "POS", "Inventory & ATP", "Routing & fulfilment", "Returns & exchanges"] },
+    { label: "Technical & tools", items: ["SQL & PL/SQL", "SuiteScript", "JMeter", "Jenkins", "Grafana", "NetSuite", "SAP", "Shopify", "Jira", "Figma"] }
+  ]
+},
+
+/* ============================================================== CONTACT */
 contact: {
-  eyebrow: "Contact",
-  title:   "Let's talk",
-  intro:   "I'm looking for product and customer success roles in B2B SaaS. If you're hiring, or you just want to talk about order management, I'd like to hear from you.",
+  title: "Let's talk",
+  intro: "I'm looking for product and customer success roles. If you're hiring, or just want to talk order management, I'd like to hear from you.",
   items: [
-    { label: "Email",    value: "vidhan9848@gmail.com",  action: "copy", href: "" },
-    { label: "Phone",    value: "+91 95891 59848",       action: "copy", href: "" },
-    { label: "LinkedIn", value: "in/sharma-vidhan",      action: "open", href: "https://www.linkedin.com/in/sharma-vidhan" },
-    { label: "Résumé",   value: "PDF",                    action: "open", href: "/assets/resume/Vidhan_Sharma_Resume.pdf" }
+    { label: "Email",    value: "vidhan9848@gmail.com", copy: true, cta: "Copy email" },
+    { label: "Phone",    value: "+91 95891 59848",      copy: true, cta: "Copy number", copyValue: "+919589159848" },
+    { label: "LinkedIn", value: "sharma-vidhan",        href: "https://www.linkedin.com/in/sharma-vidhan", cta: "Open profile ↗" },
+    { label: "Resume",   value: "PDF",                  href: "/assets/resume/Vidhan_Sharma_Resume.pdf",   cta: "View resume ↗" }
   ]
 }
 
