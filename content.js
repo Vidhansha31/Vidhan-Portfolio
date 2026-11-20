@@ -39,7 +39,7 @@ nav: [
   { label: "Product thinking", href: "#vitaran" },
   { label: "About",            href: "#about" },
   { label: "Contact",          href: "#contact" },
-  { label: "Resume",           href: "/assets/resume/Vidhan_Sharma_Resume.pdf" }
+  { label: "Resume",           href: "/assets/resume/VIDHAN_SHARMA.pdf" }
 ],
 
 /* ============================================================== HERO */
@@ -51,7 +51,7 @@ hero: {
   actions: [
     { label: "Get in touch",     href: "#contact", primary: true },
     { label: "LinkedIn",         href: "https://www.linkedin.com/in/sharma-vidhan" },
-    { label: "Resume",           href: "/assets/resume/Vidhan_Sharma_Resume.pdf" },
+    { label: "Resume",           href: "/assets/resume/VIDHAN_SHARMA.pdf" },
     { label: "See case studies", href: "#problems" }
   ],
   photo: "/assets/about/Vidhan-Portrait.jpg"
@@ -334,7 +334,7 @@ contact: {
     { label: "Email",    value: "vidhan9848@gmail.com", copy: true, cta: "Copy email" },
     { label: "Phone",    value: "+91 95891 59848",      copy: true, cta: "Copy number", copyValue: "+919589159848" },
     { label: "LinkedIn", value: "sharma-vidhan",        href: "https://www.linkedin.com/in/sharma-vidhan", cta: "Open profile ↗" },
-    { label: "Resume",   value: "PDF",                  href: "/assets/resume/Vidhan_Sharma_Resume.pdf",   cta: "View resume ↗" }
+    { label: "Resume",   value: "PDF",                  href: "/assets/resume/VIDHAN_SHARMA.pdf",   cta: "View resume ↗" }
   ]
 }
 
